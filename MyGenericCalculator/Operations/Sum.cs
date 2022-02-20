@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Interfaces;
+using System;
+
 
 namespace MyGenericCalculator
 {
-    internal class Sum
+    public class Sum : IOperator
     {
-            public double value { get; set; }
-            public double Operate(double firstParam, double secondParam)
-            {
-                return this.value = firstParam + secondParam;
-            }
+        public dynamic value { get; set; }
+        public ConsoleKey key { get; set; } = ConsoleKey.Add;
 
+        public T Operate<T>(T firstParam, T secondParam)
+        {
+            return this.value = (dynamic)firstParam + (dynamic)secondParam;
+        }
     }
 }

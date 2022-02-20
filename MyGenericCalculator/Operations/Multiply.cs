@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Interfaces;
+using System;
 
 namespace MyGenericCalculator
 {
-    internal class Multiply
+    public class Multiply : IOperator
     {
-        public double value { get; set; }
+        public dynamic value { get; set; }
+        public ConsoleKey key { get; set; } = ConsoleKey.Multiply;
 
-        public double Operate(double firstParam, double secondParam)
+        public T Operate<T>(T firstParam, T secondParam)
         {
-            return this.value = firstParam * secondParam;
+            return this.value = (dynamic)firstParam * (dynamic)secondParam;
         }
     }
 }

@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyGenericCalculator
+namespace Interfaces
 {
-    internal interface IOperator<T>
+    public interface ICreateColculator
     {
-        T Operate(T firstParam, T secondParam);
+        IEnumerable<IOperator> GetOperators();
     }
 }

@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using Interfaces;
 namespace MyGenericCalculator
 {
-    internal class Subtract
+    public class Subtract : IOperator
     {
-        public double value { get; set; }
-        public double Operate(double firstParam, double secondParam)
+        public dynamic value { get; set; }
+        public ConsoleKey key { get; set; } = ConsoleKey.Subtract;
+        public T Operate<T>(T firstParam, T secondParam)
         {
-            return value = firstParam - secondParam;
+            return this.value = (dynamic)firstParam - (dynamic)secondParam;
         }
     }
 }
